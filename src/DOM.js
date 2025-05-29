@@ -11,7 +11,8 @@ function DOMFunc() {
     const failSection = document.querySelector("#fail-section");
     const failScale = document.querySelector(".fail-scale");
     const usersAnswer = document.querySelector("#users-answer");
-
+    const successDiv = document.querySelector(".success-div");
+    
     failSection.style.display = "none";
 
     allNotes.forEach(note => {
@@ -21,7 +22,7 @@ function DOMFunc() {
         noteSelect.appendChild(newOption);
     })
 
-	return { noteName, modeIndex, mode, noteSelect, tryButton, noteSelectForm, failSection, failScale, usersAnswer, tryAgainButton};
+	return { noteName, modeIndex, mode, noteSelect, tryButton, noteSelectForm, failSection, failScale, usersAnswer, tryAgainButton, successDiv};
 }
 
 const DOM = DOMFunc();

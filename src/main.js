@@ -8,8 +8,17 @@ DOM.tryButton.addEventListener("click", () => {
 	const selectedValue = DOM.noteSelect.value;
 	if (selectedValue == answer) {
 		DOM.tryButton.style = "border-color: green";
+
+        DOM.successDiv.style.opacity = "1";
+        DOM.successDiv.classList.add("success-div-animated");
+        setTimeout(() => {
+            DOM.successDiv.classList.remove("success-div-animated");
+            DOM.successDiv.style.opacity = "0";
+        }, 400);
 		({ note, scale, mode, answer } = newRound());
-	} else {
+	} else if(selectedValue === ""){
+        alert("Please choose a note.")
+    } else {
 		DOM.tryButton.style = "border-color: red";
 		DOM.tryButton.disabled = true;
 		DOM.tryButton.innerText = "Failed!";

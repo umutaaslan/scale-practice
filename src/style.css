@@ -74,7 +74,6 @@ body {
   display: flex;
   place-items: center;
   min-width: 320px;
-  min-height: 100vh;
 }
 
 h1 {
@@ -83,16 +82,19 @@ h1 {
 }
 
 #app {
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
-  border: 2px solid red;
+  border-radius: 4px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+  background-color: hsl(0, 0%, 16%);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 12px;
+  position: relative;
+  isolation: isolate;
 }
 .note-name {
   font-size: 1.5rem;
@@ -123,6 +125,7 @@ h1 {
 
 #note-select-form {
   margin-top: 24px;
+  text-align: center;
 }
 
 #try-button{
@@ -137,6 +140,8 @@ h1 {
   font-weight: 500;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .fail-scale {
@@ -157,7 +162,22 @@ h1 {
   font-size: 1.8rem;
 }
 
+.success-div {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: hsl(140, 70%, 40%);
+  top: 0;
+  right: 0;
+  z-index: 1;
+  pointer-events: none;
+}
 
+.success-div-animated {
+  animation: fadeOut 0.4s;
+
+}
 
 
 
@@ -185,4 +205,18 @@ button:active {
   width: 100%;
   margin-top: 8px;
 }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
