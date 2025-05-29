@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="note-name"><p class="note">G#</p> major scale</div>
+      <div class="mode-section"><p class="mode-index">I</p> / <i class="mode">ionian</i></div>
+      <div id="note-select-form">
+        <p>Choose the note that fits the scale and mode shown above</p>
+        <select name="note-select" id="note-select">
+          <option value="" disabled selected hidden></option>
+        </select>
+      </div>
+      <div id="fail-section"> 
+        <div class="fail-scale"></div>
+        <p>Your answer: <p id="users-answer"></p></p>
+      </div>
+      <button type="button" id="try-button">Try</button>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
