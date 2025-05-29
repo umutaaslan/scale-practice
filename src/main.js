@@ -11,17 +11,35 @@ DOM.tryButton.addEventListener("click", () => {
 		({ note, scale, mode, answer } = newRound());
 	} else {
 		DOM.tryButton.style = "border-color: red";
+		DOM.tryButton.disabled = true;
 		DOM.tryButton.innerText = "Failed!";
 		DOM.noteSelectForm.style.display = "none";
-		DOM.failSection.style.display = "block";
+		DOM.failSection.style.display = "flex";
+		DOM.failScale.style.display = "flex";
         DOM.usersAnswer.innerText = selectedValue;
         
         scale.forEach(note => {
             const noteDiv = document.createElement("div");
             noteDiv.style.display = "inline-block";
+            if(note === answer){
+                noteDiv.style.color = "green";
+            }
             noteDiv.innerText = note;
-            DOM.failSection.appendChild(noteDiv);
+            DOM.failScale.appendChild(noteDiv);
         })
 		
 	}
 });
+
+DOM.tryAgainButton.addEventListener("click", () => {
+	DOM.noteSelectForm.style.display = "revert";
+	DOM.failSection.style.display = "none";
+    DOM.tryButton.innerText = "Try";
+	DOM.tryButton.style = "border-color: #646cff";
+    ({ note, scale, mode, answer } = newRound());
+	DOM.failScale.innerText = "";
+	DOM.tryButton.disabled = false;
+    DOM.usersAnswer.innerText = "";
+
+})
+// handle with empty answer (dont let user to click)

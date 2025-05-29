@@ -6,6 +6,7 @@ function DOMFunc() {
 	const mode = document.querySelector(".mode");
 	const noteSelect = document.querySelector("#note-select");
 	const tryButton = document.querySelector("#try-button");
+	const tryAgainButton = document.querySelector("#try-again-button");
     const noteSelectForm = document.querySelector("#note-select-form");
     const failSection = document.querySelector("#fail-section");
     const failScale = document.querySelector(".fail-scale");
@@ -20,7 +21,7 @@ function DOMFunc() {
         noteSelect.appendChild(newOption);
     })
 
-	return { noteName, modeIndex, mode, noteSelect, tryButton, noteSelectForm, failSection, failScale, usersAnswer};
+	return { noteName, modeIndex, mode, noteSelect, tryButton, noteSelectForm, failSection, failScale, usersAnswer, tryAgainButton};
 }
 
 const DOM = DOMFunc();

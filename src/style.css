@@ -135,13 +135,15 @@ h1 {
 #fail-section {
   width: 100%;
   font-weight: 500;
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 .fail-scale {
   display: flex;
   flex-direction: row;
   gap: 24px;
+  margin-bottom: 12px;
 }
 #fail-section > div {
   font-size: 1.8rem;
@@ -150,6 +152,9 @@ h1 {
 #users-answer {
   display: inline-block;
   color: red;
+  padding: 0;
+  margin: 0;
+  font-size: 1.8rem;
 }
 
 
